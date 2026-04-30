@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BautiCumple de Gio</title>
+    <meta
+      name="description"
+      content="Invitación al bautismo y primer Cumpleaños de Giovanni."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="decor-layer" aria-hidden="true">
+        <span class="cloud cloud-left"></span>
+        <span class="cloud cloud-right"></span>
+        <span class="cloud cloud-bottom"></span>
+        <span class="paw paw-one"></span>
+        <span class="paw paw-two"></span>
+        <span class="paw paw-three"></span>
+      </div>
+
+      <header class="hero reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">Bautismo + 1er cumpleaños</p>
+          <p class="hero-script">
+            Un día de ositos, bendiciones y mucha ternura
+          </p>
+          <h1>BautiCumple de Gio</h1>
+          <p class="hero-text">
+            Entre nubes suaves, abrazos y ositos de peluche, vamos a celebrar el
+            bautismo y el primer año de Giovanni en una jornada llena de amor.
+          </p>
+
+          <div class="mini-badges" aria-label="Etiquetas del evento">
+            <span class="mini-badge">Bautismo</span>
+            <span class="mini-badge">Cumple 1 año</span>
+          </div>
+
+          <div class="event-pill">
+            <span>18 de julio de 2026</span>
+            <span class="dot"></span>
+            <span>Guarda la fecha</span>
+          </div>
+
+          <div class="countdown" aria-label="Cuenta regresiva para el evento">
+            <div class="time-box">
+              <span id="days">00</span>
+              <small>Días</small>
+            </div>
+            <div class="time-box">
+              <span id="hours">00</span>
+              <small>Horas</small>
+            </div>
+            <div class="time-box">
+              <span id="minutes">00</span>
+              <small>Min</small>
+            </div>
+            <div class="time-box">
+              <span id="seconds">00</span>
+              <small>Seg</small>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#confirmar">Confirmar asistencia</a>
+            <a class="button secondary" href="#ubicaciones">Ver ubicaciones</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="main-photo photo-slot" id="main-photo">
+            <img
+              class="main-photo-image"
+              id="main-photo-image"
+              src="./giovanni-principal.jpg"
+              alt="Giovanni sonriendo"
+              loading="eager"
+            />
+            <div class="main-photo-fallback" id="main-photo-fallback">
+              <span>Foto principal de Giovanni</span>
+              <small
+                >Dejé lista esta portada para usar la imagen real apenas esté
+                disponible en el proyecto.</small
+              >
+            </div>
+          </div>
+          <div class="floating-card teddy-card">
+            <p>Temática</p>
+            <strong>Ositos de peluche</strong>
+          </div>
+          <div class="floating-card date-card">
+            <p>Sábado</p>
+            <strong>18.07.2026</strong>
+          </div>
+          <div class="floating-card age-card">
+            <p>Nuestro osito</p>
+            <strong>Cumple 1 año</strong>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="story-card reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Una celebración doble</p>
+            <h2>Nos encantaría compartir este momento tan dulce con vos</h2>
+          </div>
+
+          <div class="story-grid">
+            <article>
+              <h3>Bautismo</h3>
+              <p>
+                Un espacio para acompañar a Giovanni en su bendición y en el
+                comienzo de este camino de fe, rodeado de quienes más queremos,
+                junto a Mis Padrinos Jessica y Roman.
+              </p>
+            </article>
+            <article>
+              <h3>Primer cumpleaños</h3>
+              <p>
+                Después del bautismo seguimos festejando su primer añito con una
+                tarde llena de ternura, detalles pastel, abrazos y muchos besos.
+              </p>
+            </article>
+            <article class="mini-gallery">
+              <article class="story-photo photo-card" data-photo-card>
+                <div
+                  class="family-photo"
+                  style="--photo-backdrop: url('./images/gio.jpg');"
+                >
+                  <img
+                    class="family-photo-image"
+                    src="./images/gio.jpg"
+                    alt="Giovanni en una foto individual"
+                    loading="lazy"
+                    data-photo-target
+                    style="--story-fit: cover; --photo-position: center 82%; --photo-shift-y: 8px;"
+                  />
+                  <div class="family-photo-fallback">
+                    <span>Foto de Gio</span>
+                    <small>Este espacio muestra su fotito individual.</small>
+                  </div>
+                </div>
+              </article>
+              <article class="story-photo photo-card" data-photo-card>
+                <div
+                  class="family-photo"
+                  style="--photo-backdrop: url('./images/familiar.jpg');"
+                >
+                  <img
+                    class="family-photo-image"
+                    src="./images/familiar.jpg"
+                    alt="Foto familiar de Giovanni"
+                    loading="lazy"
+                    data-photo-target
+                    style="--story-fit: contain; --photo-position: center 48%; --photo-scale: 0.92;"
+                  />
+                  <div class="family-photo-fallback">
+                    <span>Foto familiar</span>
+                    <small>Acá queda la imagen con la familia.</small>
+                  </div>
+                </div>
+              </article>
+            </article>
+          </div>
+        </section>
+
+        <section class="gallery-section reveal" id="galeria">
+          <div class="section-heading gallery-heading">
+            <div>
+              <p class="eyebrow">Recuerditos de Gio</p>
+              <h2>Un carrusel suave para ir pasando por sus fotitos</h2>
+            </div>
+            <p class="gallery-intro">
+              Dejé armado un slider con reproducción automática, flechas y
+              puntos. Por ahora mezcla las fotos disponibles con espacios listos
+              para completar cuando sumes el resto del álbum.
+            </p>
+          </div>
+
+          <div class="carousel-shell">
+            <div class="carousel-frame" aria-label="Galería de fotos de Giovanni">
+              <button
+                class="carousel-arrow carousel-arrow-left"
+                type="button"
+                id="carousel-prev"
+                aria-label="Foto anterior"
+              >
+                ‹
+              </button>
+
+              <div class="carousel-viewport" id="photo-carousel"></div>
+
+              <button
+                class="carousel-arrow carousel-arrow-right"
+                type="button"
+                id="carousel-next"
+                aria-label="Foto siguiente"
+              >
+                ›
+              </button>
+            </div>
+
+            <div class="carousel-dots" id="carousel-dots" aria-label="Navegación del carrusel"></div>
+          </div>
+        </section>
+
+        <section class="family-section reveal" id="familia">
+          <div class="section-heading family-heading">
+            <p class="eyebrow">Su gente más cercana</p>
+            <h2>Papás y padrinos que lo acompañan en este día tan especial</h2>
+          </div>
+
+          <div class="family-groups">
+            <article class="family-group">
+              <div class="family-group-header">
+                <p class="eyebrow">Papás de Gio</p>
+                <p>
+                  Espacio pensado para mostrar a quienes lo abrazan todos los
+                  días.
+                </p>
+              </div>
+
+              <div class="family-grid">
+                <article class="family-card photo-card" data-photo-card>
+                  <div class="family-photo">
+                    <img
+                      class="family-photo-image"
+                      src="./images/papa.jpg"
+                      alt="Papá de Giovanni"
+                      loading="lazy"
+                      style="--photo-position: center 38%;"
+                    />
+                    <div class="family-photo-fallback">
+                      <span>Foto del papá</span>
+                      <small>Deja acá la imagen real cuando la tengas lista.</small>
+                    </div>
+                  </div>
+                  <div class="family-copy">
+                    <p class="family-role">Papá</p>
+                    <h3>Luciano</h3>
+                  </div>
+                </article>
+
+                <article class="family-card photo-card" data-photo-card>
+                  <div class="family-photo">
+                    <img
+                      class="family-photo-image"
+                      src="./mama-gio.jpg"
+                      alt="Mamá de Giovanni"
+                      loading="lazy"
+                      style="--photo-position: center 36%;"
+                    />
+                    <div class="family-photo-fallback">
+                      <span>Foto de la mamá</span>
+                      <small>Lista para reemplazar por su fotito real.</small>
+                    </div>
+                  </div>
+                  <div class="family-copy">
+                    <p class="family-role">Mamá</p>
+                    <h3>Gabriela</h3>
+                  </div>
+                </article>
+              </div>
+            </article>
+
+            <article class="family-group">
+              <div class="family-group-header">
+                <p class="eyebrow">Padrinos</p>
+                <p>
+                  También dejé el bloque del bautismo listo para sumar sus
+                  nombres y sus fotos.
+                </p>
+              </div>
+
+              <div class="family-grid">
+                <article class="family-card photo-card" data-photo-card>
+                  <div class="family-photo">
+                    <img
+                      class="family-photo-image"
+                      src="./images/madrina.jpg"
+                      alt="Madrina de Giovanni"
+                      loading="lazy"
+                      style="--photo-position: center 32%;"
+                    />
+                    <div class="family-photo-fallback">
+                      <span>Foto de la madrina</span>
+                      <small>Perfecta para sumar una imagen tierna del bautismo.</small>
+                    </div>
+                  </div>
+                  <div class="family-copy">
+                    <p class="family-role">Madrina</p>
+                    <h3>Jessica</h3>
+                  </div>
+                </article>
+
+                <article class="family-card photo-card" data-photo-card>
+                  <div class="family-photo">
+                    <img
+                      class="family-photo-image"
+                      src="./images/padrino.jpg"
+                      alt="Padrino de Giovanni"
+                      loading="lazy"
+                      style="--photo-position: center 30%;"
+                    />
+                    <div class="family-photo-fallback">
+                      <span>Foto del padrino</span>
+                      <small>Queda lista para reemplazar por su foto real.</small>
+                    </div>
+                  </div>
+                  <div class="family-copy">
+                    <p class="family-role">Padrino</p>
+                    <h3>Roman</h3>
+                  </div>
+                </article>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="details-grid" id="ubicaciones">
+          <article class="detail-card reveal">
+            <div class="section-heading">
+              <p class="eyebrow">Ceremonia</p>
+              <h2>Ubicación del bautismo</h2>
+            </div>
+            <p class="detail-line">
+              <strong>Lugar:</strong> Parroquia Nuestra Señora de La Merced Alta
+              Gracia
+            </p>
+            <p class="detail-line">
+              <strong>Horario:</strong> 17:45 hs
+            </p>
+            <p class="detail-line">
+              <strong>Dirección:</strong> Nieto, Poluyan Alta Gracia - Cordoba
+            </p>
+            <a
+              class="button tertiary"
+              href="https://maps.app.goo.gl/1qBKwipz6bpMcc3Q8"
+              target="_blank"
+              rel="noreferrer"
+              >Ver en Maps</a
+            >
+          </article>
+
+          <article class="detail-card reveal">
+            <div class="section-heading">
+              <p class="eyebrow">Festejo</p>
+              <h2>Ubicación del cumple</h2>
+            </div>
+            <p class="detail-line">
+              <strong>Lugar:</strong> Amerian Córdoba Park Hotel
+            </p>
+            <p class="detail-line">
+              <strong>Horario:</strong> 19:30 hs hasta 23:30 hs
+            </p>
+            <p class="detail-line">
+              <strong>Dirección:</strong> Boulevard San Juan 165 - Cordoba
+              Capital
+            </p>
+            <a
+              class="button tertiary"
+              href="https://maps.app.goo.gl/2u2p1rsXR9HtZbTL7"
+              target="_blank"
+              rel="noreferrer"
+              >Ver en Maps</a
+            >
+          </article>
+        </section>
+
+        <section class="timeline reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Agenda del día</p>
+            <h2>Así se vivirá este día de bautismo y primer cumple</h2>
+          </div>
+
+          <div class="timeline-list">
+            <div class="timeline-item">
+              <span class="timeline-hour">Hora</span>
+              <div>
+                <h3>Ceremonia de bautismo</h3>
+                <p>Espacio reservado para sumar detalle de la ceremonia.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-hour">Hora</span>
+              <div>
+                <h3>Recepción y fotos</h3>
+                <p>
+                  Lugar para indicar si hay merienda, brindis, fotos familiares
+                  o momento de bienvenida.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-hour">Hora</span>
+              <div>
+                <h3>Festejo del primer cumple</h3>
+                <p>
+                  Acá podemos sumar torta, show, souvenirs o cualquier detalle.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="confirm-section reveal" id="confirmar">
+          <div class="confirm-copy">
+            <div class="section-heading">
+              <p class="eyebrow">Confirmación</p>
+              <h2>
+                Confirma asistencia
+                <small><b>Tenes limite hasta el 20/06</b></small>
+              </h2>
+            </div>
+            <p>
+              Completa los datos para tener una referencia rápida. También dejé
+              un botón listo para conectar después con WhatsApp y facilitar la
+              confirmación.
+            </p>
+            <p class="confirm-note">
+              La confirmación se prepara y se envía directo por WhatsApp.
+            </p>
+          </div>
+
+          <form class="confirm-form" id="rsvp-form">
+            <label>
+              Nombre y apellido
+              <input
+                type="text"
+                id="guest-name"
+                name="guest-name"
+                placeholder="Ej: Maria Perez"
+                required
+              />
+            </label>
+
+            <label>
+              Cantidad de asistentes
+              <input
+                type="number"
+                id="guest-count"
+                name="guest-count"
+                min="1"
+                max="10"
+                value="1"
+                required
+              />
+            </label>
+
+            <label>
+              Mensaje
+              <textarea
+                id="guest-message"
+                name="guest-message"
+                rows="4"
+                placeholder="Ej: Vamos felices a compartir este día."
+              ></textarea>
+            </label>
+
+            <div class="form-actions">
+              <button type="submit" class="button primary">
+                Confirmar por WhatsApp
+              </button>
+            </div>
+
+            <p class="form-feedback" id="form-feedback" aria-live="polite">
+              Completa tus datos para enviar la confirmación por WhatsApp.
+            </p>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
