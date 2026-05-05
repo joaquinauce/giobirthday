@@ -80,15 +80,15 @@
             <img
               class="main-photo-image"
               id="main-photo-image"
-              src="./giovanni-principal.jpg"
+              src="./images/portada/portada1.jpg"
               alt="Giovanni sonriendo"
               loading="eager"
             />
             <div class="main-photo-fallback" id="main-photo-fallback">
               <span>Foto principal de Giovanni</span>
               <small
-                >Dejé lista esta portada para usar la imagen real apenas esté
-                disponible en el proyecto.</small
+                >La portada toma una imagen aleatoria de la carpeta
+                images/portada en cada carga.</small
               >
             </div>
           </div>
@@ -132,17 +132,13 @@
             </article>
             <article class="mini-gallery">
               <article class="story-photo photo-card" data-photo-card>
-                <div
-                  class="family-photo"
-                  style="--photo-backdrop: url('./images/gio.jpg');"
-                >
+                <div class="family-photo">
                   <img
                     class="family-photo-image"
                     src="./images/gio.jpg"
                     alt="Giovanni en una foto individual"
                     loading="lazy"
-                    data-photo-target
-                    style="--story-fit: cover; --photo-position: center 82%; --photo-shift-y: 8px;"
+                    style="--photo-fit: cover; --photo-position: center 76%"
                   />
                   <div class="family-photo-fallback">
                     <span>Foto de Gio</span>
@@ -151,17 +147,13 @@
                 </div>
               </article>
               <article class="story-photo photo-card" data-photo-card>
-                <div
-                  class="family-photo"
-                  style="--photo-backdrop: url('./images/familiar.jpg');"
-                >
+                <div class="family-photo">
                   <img
                     class="family-photo-image"
-                    src="./images/familiar.jpg"
+                    src="./images/familiar2.jpg"
                     alt="Foto familiar de Giovanni"
                     loading="lazy"
-                    data-photo-target
-                    style="--story-fit: contain; --photo-position: center 48%; --photo-scale: 0.92;"
+                    style="--photo-fit: cover; --photo-position: center 34%"
                   />
                   <div class="family-photo-fallback">
                     <span>Foto familiar</span>
@@ -170,46 +162,6 @@
                 </div>
               </article>
             </article>
-          </div>
-        </section>
-
-        <section class="gallery-section reveal" id="galeria">
-          <div class="section-heading gallery-heading">
-            <div>
-              <p class="eyebrow">Recuerditos de Gio</p>
-              <h2>Un carrusel suave para ir pasando por sus fotitos</h2>
-            </div>
-            <p class="gallery-intro">
-              Dejé armado un slider con reproducción automática, flechas y
-              puntos. Por ahora mezcla las fotos disponibles con espacios listos
-              para completar cuando sumes el resto del álbum.
-            </p>
-          </div>
-
-          <div class="carousel-shell">
-            <div class="carousel-frame" aria-label="Galería de fotos de Giovanni">
-              <button
-                class="carousel-arrow carousel-arrow-left"
-                type="button"
-                id="carousel-prev"
-                aria-label="Foto anterior"
-              >
-                ‹
-              </button>
-
-              <div class="carousel-viewport" id="photo-carousel"></div>
-
-              <button
-                class="carousel-arrow carousel-arrow-right"
-                type="button"
-                id="carousel-next"
-                aria-label="Foto siguiente"
-              >
-                ›
-              </button>
-            </div>
-
-            <div class="carousel-dots" id="carousel-dots" aria-label="Navegación del carrusel"></div>
           </div>
         </section>
 
@@ -237,11 +189,13 @@
                       src="./images/papa.jpg"
                       alt="Papá de Giovanni"
                       loading="lazy"
-                      style="--photo-position: center 38%;"
+                      style="--photo-position: center 38%"
                     />
                     <div class="family-photo-fallback">
                       <span>Foto del papá</span>
-                      <small>Deja acá la imagen real cuando la tengas lista.</small>
+                      <small
+                        >Deja acá la imagen real cuando la tengas lista.</small
+                      >
                     </div>
                   </div>
                   <div class="family-copy">
@@ -254,10 +208,10 @@
                   <div class="family-photo">
                     <img
                       class="family-photo-image"
-                      src="./mama-gio.jpg"
+                      src="./images/mama.jpg"
                       alt="Mamá de Giovanni"
                       loading="lazy"
-                      style="--photo-position: center 36%;"
+                      style="--photo-position: center 36%"
                     />
                     <div class="family-photo-fallback">
                       <span>Foto de la mamá</span>
@@ -289,11 +243,14 @@
                       src="./images/madrina.jpg"
                       alt="Madrina de Giovanni"
                       loading="lazy"
-                      style="--photo-position: center 32%;"
+                      style="--photo-position: center 32%"
                     />
                     <div class="family-photo-fallback">
                       <span>Foto de la madrina</span>
-                      <small>Perfecta para sumar una imagen tierna del bautismo.</small>
+                      <small
+                        >Perfecta para sumar una imagen tierna del
+                        bautismo.</small
+                      >
                     </div>
                   </div>
                   <div class="family-copy">
@@ -309,11 +266,13 @@
                       src="./images/padrino.jpg"
                       alt="Padrino de Giovanni"
                       loading="lazy"
-                      style="--photo-position: center 30%;"
+                      style="--photo-position: center 30%"
                     />
                     <div class="family-photo-fallback">
                       <span>Foto del padrino</span>
-                      <small>Queda lista para reemplazar por su foto real.</small>
+                      <small
+                        >Queda lista para reemplazar por su foto real.</small
+                      >
                     </div>
                   </div>
                   <div class="family-copy">
@@ -326,6 +285,14 @@
           </div>
         </section>
 
+        <section class="gallery-section reveal" id="galeria">
+          <div
+            class="photo-stack-stage"
+            id="photo-carousel"
+            aria-label="Galería de fotos de Giovanni"
+          ></div>
+        </section>
+
         <section class="details-grid" id="ubicaciones">
           <article class="detail-card reveal">
             <div class="section-heading">
@@ -336,9 +303,7 @@
               <strong>Lugar:</strong> Parroquia Nuestra Señora de La Merced Alta
               Gracia
             </p>
-            <p class="detail-line">
-              <strong>Horario:</strong> 17:45 hs
-            </p>
+            <p class="detail-line"><strong>Horario:</strong> 17:45 hs</p>
             <p class="detail-line">
               <strong>Dirección:</strong> Nieto, Poluyan Alta Gracia - Cordoba
             </p>
@@ -374,42 +339,6 @@
               >Ver en Maps</a
             >
           </article>
-        </section>
-
-        <section class="timeline reveal">
-          <div class="section-heading">
-            <p class="eyebrow">Agenda del día</p>
-            <h2>Así se vivirá este día de bautismo y primer cumple</h2>
-          </div>
-
-          <div class="timeline-list">
-            <div class="timeline-item">
-              <span class="timeline-hour">Hora</span>
-              <div>
-                <h3>Ceremonia de bautismo</h3>
-                <p>Espacio reservado para sumar detalle de la ceremonia.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-hour">Hora</span>
-              <div>
-                <h3>Recepción y fotos</h3>
-                <p>
-                  Lugar para indicar si hay merienda, brindis, fotos familiares
-                  o momento de bienvenida.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-hour">Hora</span>
-              <div>
-                <h3>Festejo del primer cumple</h3>
-                <p>
-                  Acá podemos sumar torta, show, souvenirs o cualquier detalle.
-                </p>
-              </div>
-            </div>
-          </div>
         </section>
 
         <section class="confirm-section reveal" id="confirmar">
@@ -462,7 +391,7 @@
                 id="guest-message"
                 name="guest-message"
                 rows="4"
-                placeholder="Ej: Vamos felices a compartir este día."
+                placeholder="Ej: Podes colocar con quienes venis, o le dedicas un mensajito a Gio 🩵"
               ></textarea>
             </label>
 

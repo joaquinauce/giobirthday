@@ -1,63 +1,82 @@
 const EVENT_DATE = new Date("2026-07-18T00:00:00");
-const WHATSAPP_NUMBER = "5493516877930";
-const CAROUSEL_INTERVAL_MS = 4000;
-
-const GALLERY_PHOTOS = [
-  {
-    src: "./images/carrusel0.jpg",
-    alt: "Luciano, Gabriela y Giovanni en una foto familiar",
-    title: "Un comienzo lleno de amor",
-    description: "Una primera foto familiar para abrir el recorrido del carrusel.",
-    position: "center 48%",
-  },
-  {
-    src: "./images/carrusel4.jpg",
-    alt: "Giovanni sonriendo con un sombrerito",
-    title: "Una sonrisa que derrite",
-    description: "Una de esas expresiones de Gio que merecen tener su propio slide.",
-    position: "center 26%",
-  },
-  {
-    src: "./images/carrusel2.jpg",
-    alt: "Familia y seres queridos junto a Giovanni",
-    title: "Rodeado de su gente",
-    description: "Una postal con parte de la familia acompañando este momento.",
-    position: "center 38%",
-  },
-  {
-    src: "./images/familiar.jpg",
-    alt: "Luciano, Gabriela y Giovanni en una selfie familiar",
-    title: "Los tres juntos",
-    description: "Una foto íntima y cercana para sumar ternura entre las demás.",
-    position: "center 42%",
-  },
-  {
-    src: "./images/carrusel1.jpg",
-    alt: "Una reunión familiar celebrando a Giovanni",
-    title: "Camino compartido",
-    description: "Otra escena linda para ir probando cómo se siente el álbum completo.",
-    position: "center 34%",
-  },
-  {
-    src: "./images/gio.jpg",
-    alt: "Giovanni descansando con su conjunto tejido",
-    title: "Nuestro pequeño osito",
-    description: "Una foto suave de Gio que queda muy bien como pausa en el carrusel.",
-    position: "center 64%",
-  },
-  ...Array.from({ length: 9 }, (_, index) => {
-    const photoNumber = index + 7;
-    const label = String(photoNumber).padStart(2, "0");
-
-    return {
-      src: `./gio-galeria-${label}.jpg`,
-      alt: `Foto ${photoNumber} de Giovanni`,
-      title: `Espacio para la foto ${label}`,
-      description:
-        "Cuando sumes más imágenes al proyecto, este slide queda listo para mostrarlas.",
-    };
-  }),
+const WHATSAPP_NUMBER = "5493512159559";
+const PHOTO_STACK_INTERVAL_MS = 1220;
+const HERO_IMAGE_DIRECTORY = "./images/portada/";
+const PHOTO_STACK_DIRECTORY = "./images/carrusel/";
+const HERO_IMAGE_FALLBACKS = [
+  `${HERO_IMAGE_DIRECTORY}portada1.jpg`,
+  `${HERO_IMAGE_DIRECTORY}portada2.jpg`,
+  `${HERO_IMAGE_DIRECTORY}portada3.jpg`,
+  `${HERO_IMAGE_DIRECTORY}portada4.jpg`,
 ];
+const PHOTO_STACK_FALLBACKS = [
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.50 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.51 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.51 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.51 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.51.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.52 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.52 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.52 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.52.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.53 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.53.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.54 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.54 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.54 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.54.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.55 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.55 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.55 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.55.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.56 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.56.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.57 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.57 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.57 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.57.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.58 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.58 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.58 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.59 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.59.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.00 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.00 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.00 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.00.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.01 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.01 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.01 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.02 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.02 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.02.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.03 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.03 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.03 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.03.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.04 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.04 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.05 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.05 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.05 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.05.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.06 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.06 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.06 (3).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.06.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.07 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.08 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.08.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.09 (1).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.09 (2).jpeg`,
+  `${PHOTO_STACK_DIRECTORY}carrusel.jpeg`,
+  `${PHOTO_STACK_DIRECTORY}carrusel0.jpg`,
+  `${PHOTO_STACK_DIRECTORY}carrusel1.jpg`,
+  `${PHOTO_STACK_DIRECTORY}carrusel2.jpg`,
+  `${PHOTO_STACK_DIRECTORY}carrusel4.jpg`,
+  `${PHOTO_STACK_DIRECTORY}carrusel5.jpg`,
+];
+const HERO_IMAGE_PATTERN = /\.(avif|gif|jpe?g|png|webp)$/i;
 
 const countdownIds = {
   days: document.getElementById("days"),
@@ -68,16 +87,82 @@ const countdownIds = {
 
 const form = document.getElementById("rsvp-form");
 const feedback = document.getElementById("form-feedback");
-const carouselViewport = document.getElementById("photo-carousel");
-const carouselDots = document.getElementById("carousel-dots");
-const carouselPrev = document.getElementById("carousel-prev");
-const carouselNext = document.getElementById("carousel-next");
+const photoStackStage = document.getElementById("photo-carousel");
 
-let carouselIndex = 0;
-let carouselTimer = null;
+let photoStackPhotos = [];
+let photoStackCards = [];
+let photoStackTimer = null;
+let photoStackIndex = 0;
+let photoStackSequence = 0;
+let isPhotoStackInView = false;
+let hasPhotoStackStarted = false;
 
 function padNumber(value) {
   return String(value).padStart(2, "0");
+}
+
+function pickRandomItem(items) {
+  if (!items.length) {
+    return null;
+  }
+
+  const randomIndex = Math.floor(Math.random() * items.length);
+  return items[randomIndex];
+}
+
+function shuffleItems(items) {
+  const shuffledItems = [...items];
+
+  for (let index = shuffledItems.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [shuffledItems[index], shuffledItems[swapIndex]] = [shuffledItems[swapIndex], shuffledItems[index]];
+  }
+
+  return shuffledItems;
+}
+
+async function loadImagesFromDirectory(directoryPath) {
+  try {
+    const response = await fetch(directoryPath, { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`Directory fetch failed with status ${response.status}`);
+    }
+
+    const markup = await response.text();
+    const documentFragment = new DOMParser().parseFromString(markup, "text/html");
+    const normalizedDirectoryPath = directoryPath.replace(/^\./, "");
+    const imageUrls = Array.from(documentFragment.querySelectorAll("a[href]"))
+      .map((link) => link.getAttribute("href")?.trim() ?? "")
+      .filter(Boolean)
+      .map((href) => new URL(href, response.url).href)
+      .filter((href) => {
+        const url = new URL(href);
+        return url.pathname.includes(normalizedDirectoryPath) && HERO_IMAGE_PATTERN.test(url.pathname);
+      });
+
+    return [...new Set(imageUrls)];
+  } catch (error) {
+    return [];
+  }
+}
+
+async function initRandomHeroImage() {
+  const heroImage = document.getElementById("main-photo-image");
+
+  if (!heroImage) {
+    return;
+  }
+
+  const discoveredImages = await loadImagesFromDirectory(HERO_IMAGE_DIRECTORY);
+  const availableImages = discoveredImages.length ? discoveredImages : HERO_IMAGE_FALLBACKS;
+  const selectedImage = pickRandomItem(availableImages);
+
+  if (!selectedImage) {
+    return;
+  }
+
+  heroImage.src = selectedImage;
 }
 
 function updateCountdown() {
@@ -108,7 +193,7 @@ function initPhotoCards() {
   const photoCards = document.querySelectorAll("[data-photo-card], #main-photo");
 
   photoCards.forEach((card) => {
-    const image = card.querySelector("[data-photo-target]") || card.querySelector("img");
+    const image = card.querySelector("img");
 
     if (!image) {
       return;
@@ -127,6 +212,308 @@ function initPhotoCards() {
     image.addEventListener("error", syncPhotoState);
     syncPhotoState();
   });
+}
+
+function preloadStackPhoto(photo) {
+  return new Promise((resolve) => {
+    const image = new Image();
+    image.onload = () => resolve(photo);
+    image.onerror = () => resolve(null);
+    image.src = photo.src;
+  });
+}
+
+function buildPhotoStackEntries(imagePaths) {
+  return imagePaths.map((src, index) => ({
+    src,
+    alt: `Foto ${index + 1} de Giovanni`,
+    position: "center 38%",
+  }));
+}
+
+async function resolveStackPhotos() {
+  const discoveredImages = await loadImagesFromDirectory(PHOTO_STACK_DIRECTORY);
+  const availableImages = discoveredImages.length ? discoveredImages : PHOTO_STACK_FALLBACKS;
+  const stackPhotos = buildPhotoStackEntries(availableImages);
+  const loadedPhotos = await Promise.all(stackPhotos.map(preloadStackPhoto));
+  return loadedPhotos.filter(Boolean);
+}
+
+function getPhotoStackPlacement(depth) {
+  const compactLayout = window.matchMedia("(max-width: 720px)").matches;
+  const horizontalSpread = compactLayout ? 124 : 290;
+  const verticalSpread = compactLayout ? 64 : 118;
+  const minWidth = compactLayout ? 220 : 320;
+  const maxWidth = compactLayout ? 300 : 430;
+
+  return {
+    x: `${Math.round((Math.random() - 0.5) * horizontalSpread * 2)}px`,
+    y: `${Math.round((Math.random() - 0.5) * verticalSpread * 2 + Math.min(depth * 2, 20) + 4)}px`,
+    rotation: `${((Math.random() - 0.5) * 16).toFixed(2)}deg`,
+    scale: (0.95 + Math.random() * 0.06).toFixed(3),
+    width: `${Math.round(minWidth + Math.random() * (maxWidth - minWidth))}px`,
+  };
+}
+
+function getCssNumber(card, variableName) {
+  const value = Number.parseFloat(getComputedStyle(card).getPropertyValue(variableName));
+  return Number.isFinite(value) ? value : 0;
+}
+
+function updatePhotoStackCardTilt(card, clientX, clientY) {
+  const bounds = card.getBoundingClientRect();
+  const relativeX = (clientX - bounds.left) / bounds.width - 0.5;
+  const relativeY = (clientY - bounds.top) / bounds.height - 0.5;
+  const tiltX = relativeY * -12;
+  const tiltY = relativeX * 14;
+
+  card.style.setProperty("--stack-tilt-x", `${tiltX.toFixed(2)}deg`);
+  card.style.setProperty("--stack-tilt-y", `${tiltY.toFixed(2)}deg`);
+  card.style.setProperty("--stack-lift", "18px");
+  card.style.setProperty("--stack-hover-scale", "1.018");
+}
+
+function resetPhotoStackCardTilt(card) {
+  card.style.setProperty("--stack-tilt-x", "0deg");
+  card.style.setProperty("--stack-tilt-y", "0deg");
+  card.style.setProperty("--stack-lift", "0px");
+  card.style.setProperty("--stack-hover-scale", "1");
+}
+
+function attachPhotoStackCardInteraction(card) {
+  const dragState = {
+    isDragging: false,
+    pointerId: null,
+    startX: 0,
+    startY: 0,
+    offsetX: 0,
+    offsetY: 0,
+  };
+
+  const handlePointerMove = (event) => {
+    if (!hasPhotoStackStarted) {
+      return;
+    }
+
+    if (!dragState.isDragging) {
+      updatePhotoStackCardTilt(card, event.clientX, event.clientY);
+      return;
+    }
+
+    const nextOffsetX = dragState.offsetX + (event.clientX - dragState.startX);
+    const nextOffsetY = dragState.offsetY + (event.clientY - dragState.startY);
+    const dragRotation = Math.max(-10, Math.min(10, nextOffsetX * 0.045));
+
+    card.style.setProperty("--stack-drag-x", `${nextOffsetX.toFixed(1)}px`);
+    card.style.setProperty("--stack-drag-y", `${nextOffsetY.toFixed(1)}px`);
+    card.style.setProperty("--stack-drag-rotation", `${dragRotation.toFixed(2)}deg`);
+    updatePhotoStackCardTilt(card, event.clientX, event.clientY);
+  };
+
+  const finishDragging = () => {
+    dragState.isDragging = false;
+    dragState.pointerId = null;
+    card.classList.remove("is-dragging");
+    resetPhotoStackCardTilt(card);
+    beginPhotoStackIfNeeded();
+  };
+
+  card.addEventListener("pointerenter", (event) => {
+    if (dragState.isDragging || !hasPhotoStackStarted) {
+      return;
+    }
+
+    updatePhotoStackCardTilt(card, event.clientX, event.clientY);
+  });
+
+  card.addEventListener("pointermove", handlePointerMove);
+
+  card.addEventListener("pointerleave", () => {
+    if (dragState.isDragging) {
+      return;
+    }
+
+    resetPhotoStackCardTilt(card);
+  });
+
+  card.addEventListener("pointerdown", (event) => {
+    if (!hasPhotoStackStarted) {
+      return;
+    }
+
+    dragState.isDragging = true;
+    dragState.pointerId = event.pointerId;
+    dragState.startX = event.clientX;
+    dragState.startY = event.clientY;
+    dragState.offsetX = getCssNumber(card, "--stack-drag-x");
+    dragState.offsetY = getCssNumber(card, "--stack-drag-y");
+
+    photoStackSequence += 1;
+    card.style.zIndex = String(photoStackSequence);
+    card.classList.add("is-dragging");
+    card.setPointerCapture(event.pointerId);
+    stopPhotoStack();
+    updatePhotoStackCardTilt(card, event.clientX, event.clientY);
+  });
+
+  card.addEventListener("pointerup", (event) => {
+    if (!dragState.isDragging || dragState.pointerId !== event.pointerId) {
+      return;
+    }
+
+    card.releasePointerCapture(event.pointerId);
+    finishDragging();
+  });
+
+  card.addEventListener("pointercancel", (event) => {
+    if (dragState.pointerId === event.pointerId && card.hasPointerCapture(event.pointerId)) {
+      card.releasePointerCapture(event.pointerId);
+    }
+
+    finishDragging();
+  });
+}
+
+function createPhotoStackCard(photo, depth) {
+  const card = document.createElement("article");
+  const plane = document.createElement("div");
+  const frame = document.createElement("div");
+  const image = document.createElement("img");
+  const placement = getPhotoStackPlacement(depth);
+
+  card.className = "photo-stack-card";
+  card.style.setProperty("--stack-x", placement.x);
+  card.style.setProperty("--stack-y", placement.y);
+  card.style.setProperty("--stack-rotation", placement.rotation);
+  card.style.setProperty("--stack-scale", placement.scale);
+  card.style.setProperty("--stack-width", placement.width);
+  card.style.setProperty("--stack-drag-x", "0px");
+  card.style.setProperty("--stack-drag-y", "0px");
+  card.style.setProperty("--stack-drag-rotation", "0deg");
+  card.style.setProperty("--stack-tilt-x", "0deg");
+  card.style.setProperty("--stack-tilt-y", "0deg");
+  card.style.setProperty("--stack-hover-scale", "1");
+  card.style.setProperty("--stack-lift", "0px");
+  card.style.zIndex = String(photoStackSequence);
+
+  plane.className = "photo-stack-plane";
+  frame.className = "photo-stack-frame";
+  image.className = "photo-stack-image";
+  image.src = photo.src;
+  image.alt = photo.alt;
+  image.loading = photoStackSequence === 1 ? "eager" : "lazy";
+
+  if (photo.position) {
+    image.style.objectPosition = photo.position;
+  }
+
+  frame.appendChild(image);
+  plane.appendChild(frame);
+  card.appendChild(plane);
+  attachPhotoStackCardInteraction(card);
+
+  return card;
+}
+
+function addNextPhotoToStack() {
+  if (!photoStackStage || !photoStackPhotos.length) {
+    return;
+  }
+
+  if (photoStackIndex >= photoStackPhotos.length) {
+    stopPhotoStack();
+    return;
+  }
+
+  const photo = photoStackPhotos[photoStackIndex];
+  photoStackIndex += 1;
+  photoStackSequence += 1;
+
+  const card = createPhotoStackCard(photo, photoStackCards.length);
+  photoStackStage.appendChild(card);
+  photoStackStage.classList.add("has-photos");
+  photoStackCards.push(card);
+
+  window.requestAnimationFrame(() => {
+    card.classList.add("is-visible");
+  });
+}
+
+function startPhotoStack() {
+  if (!photoStackStage || photoStackTimer || !photoStackPhotos.length || !isPhotoStackInView) {
+    return;
+  }
+
+  if (photoStackIndex >= photoStackPhotos.length) {
+    return;
+  }
+
+  photoStackTimer = window.setInterval(addNextPhotoToStack, PHOTO_STACK_INTERVAL_MS);
+}
+
+function stopPhotoStack() {
+  if (!photoStackTimer) {
+    return;
+  }
+
+  window.clearInterval(photoStackTimer);
+  photoStackTimer = null;
+}
+
+function beginPhotoStackIfNeeded() {
+  if (!photoStackStage || !photoStackPhotos.length || !isPhotoStackInView) {
+    return;
+  }
+
+  if (!hasPhotoStackStarted) {
+    hasPhotoStackStarted = true;
+    addNextPhotoToStack();
+  }
+
+  startPhotoStack();
+}
+
+async function initPhotoStack() {
+  if (!photoStackStage) {
+    return;
+  }
+
+  photoStackPhotos = shuffleItems(await resolveStackPhotos());
+
+  if (!photoStackPhotos.length) {
+    photoStackStage.hidden = true;
+    return;
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    isPhotoStackInView = true;
+    beginPhotoStackIfNeeded();
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.target !== photoStackStage) {
+          return;
+        }
+
+        isPhotoStackInView = entry.isIntersecting;
+
+        if (isPhotoStackInView) {
+          beginPhotoStackIfNeeded();
+          return;
+        }
+
+        stopPhotoStack();
+      });
+    },
+    {
+      threshold: 0.35,
+    },
+  );
+
+  observer.observe(photoStackStage);
 }
 
 function buildWhatsappMessage(name, count, message) {
@@ -164,148 +551,6 @@ function handleFormSubmit(event) {
   window.open(whatsappUrl, "_blank", "noopener");
 }
 
-function createCarouselSlide(photo, index) {
-  const slide = document.createElement("article");
-  slide.className = "carousel-slide";
-  slide.setAttribute("aria-label", `Foto ${index + 1} de ${GALLERY_PHOTOS.length}`);
-
-  const image = document.createElement("img");
-  image.className = "carousel-image";
-  image.src = photo.src;
-  image.alt = photo.alt;
-  image.loading = index === 0 ? "eager" : "lazy";
-  if (photo.position) {
-    image.style.objectPosition = photo.position;
-  }
-
-  const placeholder = document.createElement("div");
-  placeholder.className = "carousel-placeholder";
-  placeholder.innerHTML = `
-    <div class="carousel-placeholder-content">
-      <strong>${photo.title}</strong>
-      <p>${photo.description}</p>
-    </div>
-  `;
-
-  const caption = document.createElement("div");
-  caption.className = "carousel-caption";
-  caption.innerHTML = `
-    <strong>${photo.title}</strong>
-    <p>${photo.description}</p>
-  `;
-
-  image.addEventListener("load", () => {
-    placeholder.hidden = true;
-    slide.append(image, caption);
-  });
-
-  image.addEventListener("error", () => {
-    placeholder.hidden = false;
-  });
-
-  slide.append(placeholder);
-
-  if (image.complete && image.naturalWidth > 0) {
-    placeholder.hidden = true;
-    slide.append(image, caption);
-  }
-
-  return slide;
-}
-
-function renderCarousel() {
-  if (!carouselViewport || !carouselDots) {
-    return;
-  }
-
-  const slides = GALLERY_PHOTOS.map(createCarouselSlide);
-
-  slides.forEach((slide) => carouselViewport.appendChild(slide));
-
-  GALLERY_PHOTOS.forEach((photo, index) => {
-    const dot = document.createElement("button");
-    dot.type = "button";
-    dot.className = "carousel-dot";
-    dot.setAttribute("aria-label", `Ir a la foto ${index + 1}`);
-    dot.title = photo.title;
-    dot.addEventListener("click", () => {
-      setActiveSlide(index);
-      restartCarousel();
-    });
-    carouselDots.appendChild(dot);
-  });
-
-  setActiveSlide(0);
-}
-
-function setActiveSlide(index) {
-  if (!carouselViewport || !carouselDots) {
-    return;
-  }
-
-  const slides = carouselViewport.querySelectorAll(".carousel-slide");
-  const dots = carouselDots.querySelectorAll(".carousel-dot");
-
-  carouselIndex = (index + slides.length) % slides.length;
-
-  slides.forEach((slide, slideIndex) => {
-    slide.classList.toggle("active", slideIndex === carouselIndex);
-  });
-
-  dots.forEach((dot, dotIndex) => {
-    dot.classList.toggle("active", dotIndex === carouselIndex);
-  });
-}
-
-function goToNextSlide() {
-  setActiveSlide(carouselIndex + 1);
-}
-
-function goToPrevSlide() {
-  setActiveSlide(carouselIndex - 1);
-}
-
-function startCarousel() {
-  if (!carouselViewport) {
-    return;
-  }
-
-  stopCarousel();
-  carouselTimer = window.setInterval(goToNextSlide, CAROUSEL_INTERVAL_MS);
-}
-
-function stopCarousel() {
-  if (carouselTimer) {
-    window.clearInterval(carouselTimer);
-    carouselTimer = null;
-  }
-}
-
-function restartCarousel() {
-  stopCarousel();
-  startCarousel();
-}
-
-function initCarouselControls() {
-  if (!carouselViewport) {
-    return;
-  }
-
-  carouselPrev?.addEventListener("click", () => {
-    goToPrevSlide();
-    restartCarousel();
-  });
-
-  carouselNext?.addEventListener("click", () => {
-    goToNextSlide();
-    restartCarousel();
-  });
-
-  carouselViewport.addEventListener("mouseenter", stopCarousel);
-  carouselViewport.addEventListener("mouseleave", startCarousel);
-  startCarousel();
-}
-
 function initRevealAnimations() {
   const revealItems = document.querySelectorAll(".reveal");
 
@@ -334,10 +579,14 @@ function initRevealAnimations() {
   });
 }
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
-form?.addEventListener("submit", handleFormSubmit);
-initPhotoCards();
-renderCarousel();
-initCarouselControls();
-initRevealAnimations();
+async function initApp() {
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+  form?.addEventListener("submit", handleFormSubmit);
+  await initRandomHeroImage();
+  initPhotoCards();
+  await initPhotoStack();
+  initRevealAnimations();
+}
+
+initApp();
