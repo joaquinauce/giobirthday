@@ -3,79 +3,15 @@ const WHATSAPP_NUMBER = "5493512159559";
 const PHOTO_STACK_INTERVAL_MS = 1220;
 const HERO_IMAGE_DIRECTORY = "./images/portada/";
 const PHOTO_STACK_DIRECTORY = "./images/carrusel/";
-const HERO_IMAGE_FALLBACKS = [
-  `${HERO_IMAGE_DIRECTORY}portada1.jpg`,
-  `${HERO_IMAGE_DIRECTORY}portada2.jpg`,
-  `${HERO_IMAGE_DIRECTORY}portada3.jpg`,
-  `${HERO_IMAGE_DIRECTORY}portada4.jpg`,
-];
-const PHOTO_STACK_FALLBACKS = [
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.50 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.51 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.51 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.51 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.51.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.52 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.52 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.52 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.52.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.53 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.53.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.54 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.54 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.54 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.54.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.55 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.55 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.55 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.55.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.56 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.56.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.57 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.57 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.57 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.57.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.58 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.58 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.58 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.59 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.00.59.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.00 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.00 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.00 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.00.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.01 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.01 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.01 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.02 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.02 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.02.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.03 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.03 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.03 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.03.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.04 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.04 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.05 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.05 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.05 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.05.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.06 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.06 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.06 (3).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.06.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.07 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.08 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.08.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.09 (1).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}WhatsApp Image 2026-04-21 at 20.01.09 (2).jpeg`,
-  `${PHOTO_STACK_DIRECTORY}carrusel.jpeg`,
-  `${PHOTO_STACK_DIRECTORY}carrusel0.jpg`,
-  `${PHOTO_STACK_DIRECTORY}carrusel1.jpg`,
-  `${PHOTO_STACK_DIRECTORY}carrusel2.jpg`,
-  `${PHOTO_STACK_DIRECTORY}carrusel4.jpg`,
-  `${PHOTO_STACK_DIRECTORY}carrusel5.jpg`,
-];
+const HERO_IMAGE_FALLBACKS = buildImagePaths(
+  HERO_IMAGE_DIRECTORY,
+  Array.from({ length: 7 }, (_, index) => `portada${index + 1}.jpg`),
+);
+const PHOTO_STACK_FALLBACKS = buildImagePaths(PHOTO_STACK_DIRECTORY, [
+  "carrusel.jpeg",
+  ...Array.from({ length: 94 }, (_, index) => `carrusel (${index + 1}).jpeg`),
+  ...Array.from({ length: 5 }, (_, index) => `carrusel (${index + 1}).jpg`),
+]);
 const HERO_IMAGE_PATTERN = /\.(avif|gif|jpe?g|png|webp)$/i;
 
 const countdownIds = {
@@ -96,6 +32,10 @@ let photoStackIndex = 0;
 let photoStackSequence = 0;
 let isPhotoStackInView = false;
 let hasPhotoStackStarted = false;
+
+function buildImagePaths(directoryPath, fileNames) {
+  return fileNames.map((fileName) => encodeURI(`${directoryPath}${fileName}`));
+}
 
 function padNumber(value) {
   return String(value).padStart(2, "0");
