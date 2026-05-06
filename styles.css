@@ -33,6 +33,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   font-family: "Quicksand", sans-serif;
   color: var(--text);
   background:
@@ -78,9 +79,8 @@ body::after {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   overflow: hidden;
   pointer-events: none;
   z-index: -1;
@@ -1212,19 +1212,22 @@ body::after {
 
   .hero-visual {
     display: grid;
+    grid-template-columns: 1fr;
     min-height: auto;
-    padding: 0;
-    gap: 14px;
+    padding: 10px 0 0;
+    gap: 16px;
+    align-items: start;
   }
 
   .hero-visual::before {
-    inset: 10px 12px 18px;
-    border-radius: 30px;
+    display: none;
   }
 
   .main-photo {
-    min-height: 320px;
+    order: 1;
+    min-height: clamp(320px, 82vw, 400px);
     border-radius: 34px;
+    z-index: 1;
   }
 
   .main-photo::before,
@@ -1257,7 +1260,42 @@ body::after {
 
   .floating-card {
     position: static;
+    inset: auto;
+    z-index: 1;
     transform: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 16px 18px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(255, 250, 242, 0.98), rgba(242, 246, 250, 0.96));
+    box-shadow: 0 14px 24px rgba(102, 80, 69, 0.1);
+  }
+
+  .teddy-card {
+    order: 2;
+  }
+
+  .date-card {
+    order: 3;
+  }
+
+  .age-card {
+    order: 4;
+  }
+
+  .floating-card p {
+    margin-bottom: 6px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--taupe);
+  }
+
+  .floating-card strong {
+    display: block;
+    font-size: 1.02rem;
+    color: var(--brown-mid);
   }
 
   .family-photo {
