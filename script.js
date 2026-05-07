@@ -461,7 +461,7 @@ function buildWhatsappMessage(name, count, message) {
     "Hola! Confirmo asistencia al BautiCumple de Gio.",
     `Nombre: ${name}`,
     `Asistentes: ${count}`,
-    "Evento: Bautismo + primer cumpleaños de Giovanni",
+    "Evento: Bautismo + Primer Cumpleaños de Giovanni",
     "Fecha: 18/07/2026",
   ];
 

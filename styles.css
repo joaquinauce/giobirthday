@@ -699,10 +699,12 @@ body::after {
 }
 
 .family-heading {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  align-items: end;
+  display: block;
+}
+
+.family-heading h2 {
+  max-width: 28ch;
+  text-align: left;
 }
 
 .family-group-header p:last-child {
@@ -1120,8 +1122,7 @@ body::after {
   }
 
   .family-heading {
-    align-items: start;
-    flex-direction: column;
+    display: block;
   }
 
   .hero-visual {
