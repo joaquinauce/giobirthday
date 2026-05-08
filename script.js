@@ -1,6 +1,7 @@
 const EVENT_DATE = new Date("2026-07-18T00:00:00");
 const WHATSAPP_NUMBER = "5493512159559";
 const PHOTO_STACK_INTERVAL_MS = 1220;
+const YOUTUBE_VIDEO_ID = "DF4y7nJX32Q";
 const HERO_IMAGE_DIRECTORY = "./images/portada/";
 const PHOTO_STACK_DIRECTORY = "./images/carrusel/";
 const HERO_IMAGE_FALLBACKS = buildImagePaths(
@@ -24,6 +25,10 @@ const countdownIds = {
 const form = document.getElementById("rsvp-form");
 const feedback = document.getElementById("form-feedback");
 const photoStackStage = document.getElementById("photo-carousel");
+const musicPlayerHost = document.getElementById("youtube-player");
+const musicToggle = document.getElementById("music-toggle");
+const musicToggleTitle = document.getElementById("music-toggle-title");
+const musicToggleStatus = document.getElementById("music-toggle-status");
 
 let photoStackPhotos = [];
 let photoStackCards = [];
@@ -32,6 +37,21 @@ let photoStackIndex = 0;
 let photoStackSequence = 0;
 let isPhotoStackInView = false;
 let hasPhotoStackStarted = false;
+let isMusicEnabled = false;
+
+function updateMusicToggle(copy, isPressed = false, title = "Música de fondo") {
+  if (musicToggle) {
+    musicToggle.setAttribute("aria-pressed", String(isPressed));
+  }
+
+  if (musicToggleTitle) {
+    musicToggleTitle.textContent = title;
+  }
+
+  if (musicToggleStatus) {
+    musicToggleStatus.textContent = copy;
+  }
+}
 
 function buildImagePaths(directoryPath, fileNames) {
   return fileNames.map((fileName) => encodeURI(`${directoryPath}${fileName}`));
@@ -39,6 +59,73 @@ function buildImagePaths(directoryPath, fileNames) {
 
 function padNumber(value) {
   return String(value).padStart(2, "0");
+}
+
+function buildYoutubeEmbedUrl(videoId) {
+  const params = new URLSearchParams({
+    autoplay: "1",
+    controls: "0",
+    loop: "1",
+    modestbranding: "1",
+    playsinline: "1",
+    playlist: videoId,
+    rel: "0",
+  });
+
+  return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+}
+
+function mountBackgroundMusic() {
+  if (!musicPlayerHost) {
+    return;
+  }
+
+  musicPlayerHost.innerHTML = `
+    <iframe
+      class="music-player-frame"
+      src="${buildYoutubeEmbedUrl(YOUTUBE_VIDEO_ID)}"
+      title="Música de fondo"
+      allow="autoplay; encrypted-media"
+      referrerpolicy="strict-origin-when-cross-origin"
+    ></iframe>
+  `;
+}
+
+function unmountBackgroundMusic() {
+  if (!musicPlayerHost) {
+    return;
+  }
+
+  musicPlayerHost.innerHTML = "";
+}
+
+function playBackgroundMusic() {
+  mountBackgroundMusic();
+  isMusicEnabled = true;
+  updateMusicToggle("Sonando", true);
+}
+
+function pauseBackgroundMusic() {
+  unmountBackgroundMusic();
+  isMusicEnabled = false;
+  updateMusicToggle("Pausada", false);
+}
+
+function initBackgroundMusic() {
+  if (!musicToggle || !musicPlayerHost) {
+    return;
+  }
+
+  updateMusicToggle("Toca para escuchar", false);
+
+  musicToggle.addEventListener("click", () => {
+    if (!isMusicEnabled) {
+      playBackgroundMusic();
+      return;
+    }
+
+    pauseBackgroundMusic();
+  });
 }
 
 function pickRandomItem(items) {
@@ -523,6 +610,7 @@ async function initApp() {
   updateCountdown();
   setInterval(updateCountdown, 1000);
   form?.addEventListener("submit", handleFormSubmit);
+  initBackgroundMusic();
   await initRandomHeroImage();
   initPhotoCards();
   await initPhotoStack();

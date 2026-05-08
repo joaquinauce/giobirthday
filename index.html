@@ -18,6 +18,21 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="music-player-host" id="youtube-player" aria-hidden="true"></div>
+    <button
+      class="music-toggle"
+      id="music-toggle"
+      type="button"
+      aria-pressed="false"
+      aria-label="Activar música de fondo"
+    >
+      <span class="music-toggle-icon" aria-hidden="true">♪</span>
+      <span class="music-toggle-copy">
+        <strong id="music-toggle-title">Música de fondo</strong>
+        <small id="music-toggle-status">Toca para activar</small>
+      </span>
+    </button>
+
     <div class="page-shell">
       <div class="decor-layer" aria-hidden="true">
         <span class="cloud cloud-left"></span>
